@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="title description">
+  <title id="title">Three-page portfolio wireframe</title>
+  <desc id="description">Low-fidelity wireframes for the Home, Projects, and About and Contact pages, each with a shared navigation and semantic page regions.</desc>
+  <style>
+    text { font-family: Arial, sans-serif; fill: #222; }
+    .page { fill: #fff; stroke: #333; stroke-width: 2; }
+    .region { fill: #f2f2f2; stroke: #555; stroke-width: 1.5; }
+    .line { stroke: #888; stroke-width: 2; }
+    .label { font-size: 14px; }
+    .tag { font-size: 12px; fill: #555; }
+    .heading { font-size: 18px; font-weight: bold; }
+  </style>
+  <text x="600" y="38" text-anchor="middle" font-size="25" font-weight="bold">Portfolio Website Wireframe</text>
+  <g transform="translate(30 70)">
+    <text x="175" y="0" text-anchor="middle" class="heading">Home (index.html)</text>
+    <rect x="0" y="16" width="350" height="500" rx="5" class="page"/>
+    <text x="12" y="40" class="tag">&lt;header&gt;</text>
+    <rect x="15" y="50" width="320" height="62" class="region"/>
+    <text x="175" y="76" text-anchor="middle" class="heading">Hannah Yawt's Portfolio</text>
+    <text x="175" y="99" text-anchor="middle" class="label">Home | Projects | About / Contact</text>
+    <text x="12" y="137" class="tag">&lt;main&gt;</text>
+    <rect x="15" y="146" width="320" height="215" class="region"/>
+    <text x="30" y="172" class="tag">&lt;section&gt;</text>
+    <text x="175" y="208" text-anchor="middle" class="heading">Welcome</text>
+    <line x1="55" y1="229" x2="295" y2="229" class="line"/>
+    <text x="175" y="254" text-anchor="middle" class="label">Student introduction</text>
+    <line x1="55" y1="274" x2="295" y2="274" class="line"/>
+    <text x="175" y="320" text-anchor="middle" class="label">Explore projects and about page</text>
+    <text x="12" y="389" class="tag">&lt;footer&gt;</text>
+    <rect x="15" y="398" width="320" height="60" class="region"/>
+    <text x="175" y="434" text-anchor="middle" class="label">Copyright</text>
+  </g>
+  <g transform="translate(425 70)">
+    <text x="175" y="0" text-anchor="middle" class="heading">Projects (projects.html)</text>
+    <rect x="0" y="16" width="350" height="500" rx="5" class="page"/>
+    <text x="12" y="40" class="tag">&lt;header&gt;</text>
+    <rect x="15" y="50" width="320" height="62" class="region"/>
+    <text x="175" y="76" text-anchor="middle" class="heading">My Projects</text>
+    <text x="175" y="99" text-anchor="middle" class="label">Home | Projects | About / Contact</text>
+    <text x="12" y="137" class="tag">&lt;main&gt;</text>
+    <rect x="15" y="146" width="320" height="215" class="region"/>
+    <text x="30" y="172" class="tag">&lt;section&gt;</text>
+    <text x="175" y="204" text-anchor="middle" class="heading">Web Development Work</text>
+    <rect x="35" y="220" width="280" height="56" fill="#fff" stroke="#888"/>
+    <text x="175" y="244" text-anchor="middle" class="label">Personal Portfolio Website</text>
+    <text x="175" y="263" text-anchor="middle" class="tag">&lt;article&gt;</text>
+    <rect x="35" y="288" width="280" height="56" fill="#fff" stroke="#888"/>
+    <text x="175" y="312" text-anchor="middle" class="label">Class Assignment</text>
+    <text x="175" y="331" text-anchor="middle" class="tag">&lt;article&gt;</text>
+    <text x="12" y="389" class="tag">&lt;footer&gt;</text>
+    <rect x="15" y="398" width="320" height="60" class="region"/>
+    <text x="175" y="434" text-anchor="middle" class="label">Copyright</text>
+  </g>
+  <g transform="translate(820 70)">
+    <text x="175" y="0" text-anchor="middle" class="heading">About (about.html)</text>
+    <rect x="0" y="16" width="350" height="500" rx="5" class="page"/>
+    <text x="12" y="40" class="tag">&lt;header&gt;</text>
+    <rect x="15" y="50" width="320" height="62" class="region"/>
+    <text x="175" y="76" text-anchor="middle" class="heading">About Hannah</text>
+    <text x="175" y="99" text-anchor="middle" class="label">Home | Projects | About / Contact</text>
+    <text x="12" y="137" class="tag">&lt;main&gt;</text>
+    <rect x="15" y="146" width="320" height="215" class="region"/>
+    <text x="30" y="172" class="tag">&lt;section&gt;</text>
+    <text x="175" y="201" text-anchor="middle" class="heading">About Me</text>
+    <line x1="55" y1="218" x2="295" y2="218" class="line"/>
+    <text x="175" y="242" text-anchor="middle" class="label">Hobbies &amp; Interests</text>
+    <line x1="55" y1="258" x2="295" y2="258" class="line"/>
+    <text x="175" y="286" text-anchor="middle" class="label">Contact information</text>
+    <line x1="55" y1="302" x2="295" y2="302" class="line"/>
+    <text x="12" y="389" class="tag">&lt;footer&gt;</text>
+    <rect x="15" y="398" width="320" height="60" class="region"/>
+    <text x="175" y="434" text-anchor="middle" class="label">Copyright</text>
+  </g>
+  <text x="600" y="590" text-anchor="middle" font-size="13" fill="#555">Shared relative navigation connects all three pages.</text>
+</svg>
