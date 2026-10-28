@@ -7,31 +7,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header id="main-header">
-    <h1>My Projects</h1>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html" aria-current="page">Projects</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html">Hannah Yawt</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="card">
-      <h2>Web Development Work</h2>
+  <main class="page-shell">
+    <section class="card project-intro">
+      <p class="eyebrow">Portfolio work</p>
+      <h1>My Projects</h1>
+      <p>I enjoy creating projects that combine clear communication, practical functionality, and a thoughtful user experience.</p>
+    </section>
 
-      <article>
-        <h3>Personal Portfolio Website</h3>
-        <p>A three-page website introducing me, sharing my projects, and providing my contact information. It was created with semantic HTML.</p>
-        <p><a href="about.html#about">Visit my About page</a></p>
+    <section class="project-grid">
+      <article class="card project-card">
+        <h2>Personal Portfolio Website</h2>
+        <p>A three-page website introducing me, sharing my projects, and providing my contact information. It was created with semantic HTML and polished styling.</p>
+        <a href="about.html#about">Visit the About page</a>
       </article>
 
-      <article>
-        <h3>Project 2: Class Assignment</h3>
-        <p>A placeholder description for upcoming web projects.</p>
+      <article class="card project-card">
+        <h2>Class Assignment</h2>
+        <p>A placeholder project for learning the foundations of modern web development and user-centered design.</p>
+      </article>
+
+      <article class="card project-card">
+        <h2>Future Work</h2>
+        <p>I am continuing to build my skill set and look forward to creating more technical and creative projects soon.</p>
       </article>
     </section>
   </main>

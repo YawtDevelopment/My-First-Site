@@ -8,43 +8,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header id="main-header">
-    <h1>About Hannah</h1>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html" aria-current="page">About Me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <nav aria-label="About page sections">
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#hobbies">Hobbies &amp; Interests</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html">Hannah Yawt</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html" aria-current="page">About Me</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="about" class="card">
-      <h2>About Me</h2>
-      <img src="profile.pic.JPEG" alt="Hannah smiling in a blue shirt">
-      <p>Hello! My name is Hannah Yawt and I am a student studying Information Technology with a Cybersecurity concentration.</p>
-      <p>I enjoy learning new technologies, building practical projects, and exploring how digital systems can be made more secure and user-friendly.</p>
+  <main class="page-shell">
+    <section id="about" class="card about-layout">
+      <div class="about-image-wrap">
+        <img src="profile.pic.JPEG" alt="Hannah smiling in a blue shirt">
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow">About me</p>
+        <h1>Student. Builder. Curious learner.</h1>
+        <p>Hello! My name is Hannah Yawt and I am a student studying Information Technology with a Cybersecurity concentration.</p>
+        <p>I enjoy learning new technologies, building practical projects, and exploring how digital systems can be made more secure and user-friendly.</p>
+        <p>Outside of academics, I like to keep growing intellectually by listening to music, singing, and studying human behavior.</p>
+      </div>
     </section>
 
     <section id="hobbies" class="card">
+      <p class="eyebrow">Interests</p>
       <h2>Hobbies &amp; Interests</h2>
-      <article>
-        <h3>Things I Enjoy</h3>
-        <p>Here are a few activities and topics I care about:</p>
-        <ul>
-          <li>Singing</li>
-          <li>Listening to music</li>
-          <li>Studying human behavior</li>
-        </ul>
-      </article>
+      <div class="interest-grid">
+        <article class="interest-card">
+          <h3>Singing</h3>
+          <p>I enjoy expressing myself through music and practicing different styles.</p>
+        </article>
+        <article class="interest-card">
+          <h3>Music</h3>
+          <p>Listening to different genres helps fuel my creativity and focus.</p>
+        </article>
+        <article class="interest-card">
+          <h3>Human Behavior</h3>
+          <p>I am fascinated by how people think, interact, and make decisions.</p>
+        </article>
+      </div>
     </section>
   </main>
 
