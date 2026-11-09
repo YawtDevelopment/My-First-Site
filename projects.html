@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Portfolio</title>
+  <meta name="description" content="A selection of Hannah Yawt's web and technology projects.">
+  <title>Projects | Hannah Yawt's Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="inner">
       <a class="brand" href="index.html">Hannah Yawt</a>
@@ -20,35 +22,28 @@
       </nav>
     </div>
   </header>
-
-  <main class="page-shell">
-    <section class="card project-intro">
+  <main id="main-content" class="page-shell">
+    <section class="card project-intro" aria-labelledby="page-title">
       <p class="eyebrow">Portfolio work</p>
-      <h1>My Projects</h1>
+      <h1 id="page-title">My Projects</h1>
       <p>I enjoy creating projects that combine clear communication, practical functionality, and a thoughtful user experience.</p>
     </section>
-
-    <section class="project-grid">
+    <section class="project-grid" aria-label="Project cards">
       <article class="card project-card">
         <h2>Personal Portfolio Website</h2>
         <p>A three-page website introducing me, sharing my projects, and providing my contact information. It was created with semantic HTML and polished styling.</p>
         <a href="about.html#about">Visit the About page</a>
       </article>
-
       <article class="card project-card">
         <h2>Class Assignment</h2>
         <p>A placeholder project for learning the foundations of modern web development and user-centered design.</p>
       </article>
-
       <article class="card project-card">
         <h2>Future Work</h2>
         <p>I am continuing to build my skill set and look forward to creating more technical and creative projects soon.</p>
       </article>
     </section>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Hannah. All rights reserved.</p>
-  </footer>
+  <footer><p>&copy; 2026 Hannah Yawt. All rights reserved.</p></footer>
 </body>
 </html>

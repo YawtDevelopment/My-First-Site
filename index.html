@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="inner">
       <a class="brand" href="index.html">Hannah Yawt</a>
@@ -21,21 +22,19 @@
       </nav>
     </div>
   </header>
-
-  <main class="page-shell">
-    <section class="card hero">
+  <main id="main-content" class="page-shell">
+    <section class="card hero" aria-labelledby="page-title">
       <div class="hero-copy">
         <p class="eyebrow">Cybersecurity student</p>
-        <h1>Ethical Hacker in Progress</h1>
-        <p>Hello! I'm Hannah, an Information Technology student concentrating in Cybersecurity. My dream career is to become an ethical hacker, using my skills to protect systems, find vulnerabilities, and make digital spaces safer for everyone.</p>
+        <h1 id="page-title">Ethical Hacker in Progress</h1>
+        <p>Hello! I'm Hannah, an Information Technology student concentrating in Cybersecurity. My dream career is to become an ethical hacker, using my skills to protect systems, find vulnerabilities, and help people stay safe online.</p>
         <div class="hero-actions">
           <a class="button primary" href="projects.html">View projects</a>
           <a class="button secondary" href="contact.html">Get in touch</a>
         </div>
       </div>
-
-      <aside class="hero-panel" aria-label="Quick bio">
-        <h2>Quick Focus</h2>
+      <aside class="hero-panel" aria-labelledby="quick-focus-title">
+        <h2 id="quick-focus-title">Quick Focus</h2>
         <ul>
           <li>Cybersecurity fundamentals</li>
           <li>Systems thinking</li>
@@ -43,20 +42,17 @@
         </ul>
       </aside>
     </section>
-
-    <section class="feature-grid">
+    <section class="feature-grid" aria-label="Explore the portfolio">
       <article class="card small-card">
         <h2>Explore My Work</h2>
         <p>See what I'm building, learning, and improving as I continue to grow in technology.</p>
         <a href="projects.html">View my projects</a>
       </article>
-
       <article class="card small-card">
         <h2>Learn About Me</h2>
         <p>From tech interests to personal hobbies, this is a closer look at who I am beyond the screen.</p>
         <a href="about.html">Read my story</a>
       </article>
-
       <article class="card small-card">
         <h2>Connect</h2>
         <p>Whether you have a question, opportunity, or idea, I would love to hear from you.</p>
@@ -64,9 +60,6 @@
       </article>
     </section>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Hannah Yawt. All rights reserved.</p>
-  </footer>
+  <footer><p>&copy; 2026 Hannah Yawt. All rights reserved.</p></footer>
 </body>
 </html>

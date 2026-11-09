@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="inner">
       <a class="brand" href="index.html">Hannah Yawt</a>
@@ -21,28 +22,81 @@
       </nav>
     </div>
   </header>
-
-  <main class="page-shell">
-    <section class="card contact-layout">
+  <main id="main-content" class="page-shell">
+    <section class="card contact-layout" aria-labelledby="page-title">
       <div>
         <p class="eyebrow">Get in touch</p>
-        <h1>Let's Connect</h1>
+        <h1 id="page-title">Let's Connect</h1>
         <p>Feel free to reach out if you'd like to connect, collaborate, or ask a question. I am currently a student in Information Technology with a Cybersecurity concentration, and I would love to hear from you.</p>
+        <div class="contact-card">
+          <h2>Contact Info</h2>
+          <ul>
+            <li><strong>Email:</strong> <a href="mailto:hyawt@my.campus.edu">hyawt@my.campus.edu</a></li>
+            <li><strong>Focus:</strong> Cybersecurity and web development</li>
+            <li><strong>Availability:</strong> Open to student opportunities and collaboration</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="contact-card">
-        <h2>Contact Info</h2>
-        <ul>
-          <li><strong>Email:</strong> <a href="mailto:hyawt@my.campus.edu">hyawt@my.campus.edu</a></li>
-          <li><strong>Focus:</strong> Cybersecurity and web development</li>
-          <li><strong>Availability:</strong> Open to student opportunities and collaboration</li>
-        </ul>
+      <div class="card form-card">
+        <h2 id="form-title">Send a message</h2>
+        <p id="form-help">Fields marked required must be completed. This demonstration form does not send or store messages; use the email link to contact me.</p>
+        <form id="contact-form" novalidate aria-describedby="form-help">
+          <div class="form-field">
+            <label for="name">Your name <span>(required)</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+            <p class="field-error" id="name-error" hidden></p>
+          </div>
+          <div class="form-field">
+            <label for="email">Email address <span>(required)</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+            <p class="field-error" id="email-error" hidden></p>
+          </div>
+          <div class="form-field">
+            <label for="message">Message <span>(required)</span></label>
+            <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+            <p class="field-error" id="message-error" hidden></p>
+          </div>
+          <button class="button primary" type="submit">Check my message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
+  <footer><p>&copy; 2026 Hannah Yawt. All rights reserved.</p></footer>
+  <script>
+    const form = document.getElementById('contact-form');
+    const fields = [
+      { input: document.getElementById('name'), error: document.getElementById('name-error'), message: 'Please enter your name.' },
+      { input: document.getElementById('email'), error: document.getElementById('email-error'), message: 'Please enter a valid email address.' },
+      { input: document.getElementById('message'), error: document.getElementById('message-error'), message: 'Please enter a message.' }
+    ];
 
-  <footer>
-    <p>&copy; 2026 Hannah Yawt. All rights reserved.</p>
-  </footer>
+    function validateField(field) {
+      const invalid = !field.input.validity.valid || !field.input.value.trim();
+      field.input.setAttribute('aria-invalid', String(invalid));
+      field.error.textContent = invalid ? field.message : '';
+      field.error.hidden = !invalid;
+      return !invalid;
+    }
+
+    fields.forEach((field) => {
+      field.input.addEventListener('input', () => validateField(field));
+      field.input.addEventListener('blur', () => {
+        if (field.input.value || field.input.getAttribute('aria-invalid') === 'true') validateField(field);
+      });
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const invalidFields = fields.filter((field) => !validateField(field));
+      const status = document.getElementById('form-status');
+      if (invalidFields.length) {
+        status.textContent = 'Please correct the highlighted fields.';
+        invalidFields[0].input.focus();
+      } else {
+        status.textContent = 'Your entries look complete. This static form cannot send messages; please use the email link above.';
+      }
+    });
+  </script>
 </body>
 </html>
