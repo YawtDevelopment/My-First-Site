@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Countdown to Hannah Yawt's Class of 2028 graduation.">
+  <title>Graduation Countdown | Hannah Yawt</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1120;
+      color: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 1.5rem;
+      display: grid;
+      place-items: center;
+    }
+    .grad-card {
+      width: min(100%, 420px);
+      padding: 1.5rem;
+      border: 1px solid #374151;
+      border-radius: 14px;
+      background: #111827;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+    .grad-title {
+      margin: 0 0 0.25rem;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+    }
+    .grad-subtitle {
+      margin: 0 0 1.25rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+    .timer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+    .time-box {
+      min-width: 0;
+      padding: 0.75rem 0.5rem;
+      border-radius: 10px;
+      background: #1f2937;
+    }
+    .time-value {
+      display: block;
+      color: #38bdf8;
+      font-size: clamp(1.25rem, 7vw, 1.75rem);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .time-label {
+      display: block;
+      margin-top: 0.25rem;
+      color: #9ca3af;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+    .completion-message {
+      margin: 0;
+      padding: 1rem 0;
+      color: #34d399;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    [hidden] { display: none !important; }
+    @media (max-width: 360px) {
+      .grad-card { padding: 1rem; }
+      .timer-grid { gap: 0.4rem; }
+      .time-box { padding: 0.65rem 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="grad-card" aria-labelledby="grad-title">
+    <h1 id="grad-title" class="grad-title">🎓 Class of 2028 Countdown</h1>
+    <p class="grad-subtitle">Target date: May 15, 2028 at 9:00 AM</p>
+
+    <div id="countdown-display" class="timer-grid" role="timer" aria-label="Time remaining until graduation" aria-live="off">
+      <div class="time-box">
+        <span id="days" class="time-value">--</span>
+        <span class="time-label">Days</span>
+      </div>
+      <div class="time-box">
+        <span id="hours" class="time-value">--</span>
+        <span class="time-label">Hours</span>
+      </div>
+      <div class="time-box">
+        <span id="minutes" class="time-value">--</span>
+        <span class="time-label">Minutes</span>
+      </div>
+      <div class="time-box">
+        <span id="seconds" class="time-value">--</span>
+        <span class="time-label">Seconds</span>
+      </div>
+    </div>
+    <p id="countdown-complete" class="completion-message" role="status" hidden>🎉 Congratulations, Graduate! 🎉</p>
+  </main>
+
+  <script>
+    // Uses the visitor's local time zone, matching the provided target date and time.
+    const graduationDate = new Date('May 15, 2028 09:00:00').getTime();
+    const countdownDisplay = document.querySelector('#countdown-display');
+    const completionMessage = document.querySelector('#countdown-complete');
+    let timerInterval;
+
+    function updateCountdown() {
+      const distance = graduationDate - Date.now();
+
+      if (distance <= 0) {
+        window.clearInterval(timerInterval);
+        countdownDisplay.hidden = true;
+        completionMessage.hidden = false;
+        return;
+      }
+
+      document.querySelector('#days').textContent = Math.floor(distance / 86400000);
+      document.querySelector('#hours').textContent = String(Math.floor((distance % 86400000) / 3600000)).padStart(2, '0');
+      document.querySelector('#minutes').textContent = String(Math.floor((distance % 3600000) / 60000)).padStart(2, '0');
+      document.querySelector('#seconds').textContent = String(Math.floor((distance % 60000) / 1000)).padStart(2, '0');
+    }
+
+    // Render immediately, then refresh once per second.
+    updateCountdown();
+    if (graduationDate > Date.now()) {
+      timerInterval = window.setInterval(updateCountdown, 1000);
+    }
+  </script>
+</body>
+</html>
