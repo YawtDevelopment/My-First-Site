@@ -6,6 +6,7 @@
   <meta name="description" content="Contact Hannah Yawt for questions, collaborations, or opportunities.">
   <title>Contact | Hannah Yawt's Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -28,7 +29,8 @@
         <p class="eyebrow">Get in touch</p>
         <h1 id="page-title">Let's Connect</h1>
         <p>Feel free to reach out if you'd like to connect, collaborate, or ask a question. I am currently a student in Information Technology with a Cybersecurity concentration, and I would love to hear from you.</p>
-        <div class="contact-card">
+        <button class="button secondary contact-toggle" type="button" aria-expanded="true" aria-controls="contact-info">Hide contact info</button>
+        <div class="contact-card" id="contact-info">
           <h2>Contact Info</h2>
           <ul>
             <li><strong>Email:</strong> <a href="mailto:hyawt@my.campus.edu">hyawt@my.campus.edu</a></li>
@@ -63,40 +65,5 @@
     </section>
   </main>
   <footer><p>&copy; 2026 Hannah Yawt. All rights reserved.</p></footer>
-  <script>
-    const form = document.getElementById('contact-form');
-    const fields = [
-      { input: document.getElementById('name'), error: document.getElementById('name-error'), message: 'Please enter your name.' },
-      { input: document.getElementById('email'), error: document.getElementById('email-error'), message: 'Please enter a valid email address.' },
-      { input: document.getElementById('message'), error: document.getElementById('message-error'), message: 'Please enter a message.' }
-    ];
-
-    function validateField(field) {
-      const invalid = !field.input.validity.valid || !field.input.value.trim();
-      field.input.setAttribute('aria-invalid', String(invalid));
-      field.error.textContent = invalid ? field.message : '';
-      field.error.hidden = !invalid;
-      return !invalid;
-    }
-
-    fields.forEach((field) => {
-      field.input.addEventListener('input', () => validateField(field));
-      field.input.addEventListener('blur', () => {
-        if (field.input.value || field.input.getAttribute('aria-invalid') === 'true') validateField(field);
-      });
-    });
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const invalidFields = fields.filter((field) => !validateField(field));
-      const status = document.getElementById('form-status');
-      if (invalidFields.length) {
-        status.textContent = 'Please correct the highlighted fields.';
-        invalidFields[0].input.focus();
-      } else {
-        status.textContent = 'Your entries look complete. This static form cannot send messages; please use the email link above.';
-      }
-    });
-  </script>
 </body>
 </html>
