@@ -114,6 +114,49 @@ li { margin-bottom: var(--space-1); }
 .feature-grid, .project-grid, .interest-grid { display: grid; gap: var(--space-3); margin-top: var(--space-3); }
 .small-card { min-height: 100%; }
 .small-card a { display: inline-block; margin-top: var(--space-1); }
+
+.grad-card {
+  margin-top: var(--space-3);
+  text-align: center;
+}
+.grad-subtitle {
+  color: var(--muted);
+}
+.timer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-1);
+}
+.time-box {
+  min-width: 0;
+  padding: var(--space-2) var(--space-1);
+  border-radius: 0.5rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+}
+.time-value {
+  display: block;
+  color: var(--mint);
+  font-size: clamp(1.35rem, 5vw, 2rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.time-label {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.completion-message {
+  margin: 0;
+  padding: var(--space-2) 0;
+  color: var(--mint);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+[hidden] { display: none !important; }
+
 .project-intro { margin-bottom: var(--space-3); }
 .project-card { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-1); }
 .project-card p { margin-bottom: 0; }
@@ -167,6 +210,8 @@ footer p { margin: 0; }
   .nav-list a { width: 100%; }
   .hero-actions { flex-direction: column; }
   .button { width: 100%; }
+  .timer-grid { gap: 0.35rem; }
+  .time-box { padding: 0.6rem 0.25rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; }

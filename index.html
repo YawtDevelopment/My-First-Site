@@ -42,6 +42,19 @@
         </ul>
       </aside>
     </section>
+
+    <section class="card grad-card" aria-labelledby="grad-title">
+      <h2 id="grad-title">🎓 Class of 2028 Countdown</h2>
+      <p class="grad-subtitle">Target date: May 15, 2028 at 9:00 AM</p>
+      <div id="countdown-display" class="timer-grid" role="timer" aria-label="Time remaining until graduation" aria-live="off">
+        <div class="time-box"><span id="days" class="time-value">--</span><span class="time-label">Days</span></div>
+        <div class="time-box"><span id="hours" class="time-value">--</span><span class="time-label">Hours</span></div>
+        <div class="time-box"><span id="minutes" class="time-value">--</span><span class="time-label">Minutes</span></div>
+        <div class="time-box"><span id="seconds" class="time-value">--</span><span class="time-label">Seconds</span></div>
+      </div>
+      <p id="countdown-complete" class="completion-message" role="status" hidden>🎉 Congratulations, Graduate! 🎉</p>
+    </section>
+
     <section class="feature-grid" aria-label="Explore the portfolio">
       <article class="card small-card">
         <h2>Explore My Work</h2>
@@ -61,5 +74,32 @@
     </section>
   </main>
   <footer><p>&copy; 2026 Hannah Yawt. All rights reserved.</p></footer>
+
+  <script>
+    const graduationDate = new Date('May 15, 2028 09:00:00').getTime();
+    const countdownDisplay = document.querySelector('#countdown-display');
+    const completionMessage = document.querySelector('#countdown-complete');
+
+    function updateCountdown() {
+      const distance = graduationDate - Date.now();
+
+      if (distance <= 0) {
+        window.clearInterval(timerInterval);
+        countdownDisplay.hidden = true;
+        completionMessage.hidden = false;
+        return;
+      }
+
+      document.querySelector('#days').textContent = Math.floor(distance / 86400000);
+      document.querySelector('#hours').textContent = String(Math.floor((distance % 86400000) / 3600000)).padStart(2, '0');
+      document.querySelector('#minutes').textContent = String(Math.floor((distance % 3600000) / 60000)).padStart(2, '0');
+      document.querySelector('#seconds').textContent = String(Math.floor((distance % 60000) / 1000)).padStart(2, '0');
+    }
+
+    updateCountdown();
+    if (graduationDate > Date.now()) {
+      window.timerInterval = window.setInterval(updateCountdown, 1000);
+    }
+  </script>
 </body>
 </html>
