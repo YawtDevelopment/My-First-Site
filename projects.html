@@ -6,6 +6,14 @@
   <meta name="description" content="A selection of Hannah Yawt's web and technology projects.">
   <title>Projects | Hannah Yawt's Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .milestone-countdown { margin-top: .75rem; }
+    .milestone-countdown .timer-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .45rem; }
+    .milestone-countdown .time-box { min-width: 0; padding: .5rem .3rem; text-align: center; border: 1px solid var(--border); border-radius: .5rem; background: var(--surface-raised); }
+    .milestone-countdown .time-value { display: block; color: var(--mint); font-weight: 800; font-size: clamp(1.05rem, 3vw, 1.5rem); font-variant-numeric: tabular-nums; }
+    .milestone-countdown .time-label { color: var(--muted); font-size: .65rem; text-transform: uppercase; }
+    .milestone-note { color: var(--muted); font-size: .9rem; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -36,14 +44,57 @@
       </article>
       <article class="card project-card">
         <h2>Class Assignment</h2>
-        <p>A placeholder project for learning the foundations of modern web development and user-centered design.</p>
+        <p>An interactive graduation planner assignment featuring a live countdown, motivation button, personalization controls, and a dynamic goals list.</p>
+        <a href="interactive.html">View the interactive class assignment</a>
       </article>
       <article class="card project-card">
         <h2>Future Work</h2>
         <p>I am continuing to build my skill set and look forward to creating more technical and creative projects soon.</p>
+        <div class="milestone-countdown" aria-label="Graduation milestone countdown">
+          <p class="milestone-note">🎓 Class of 2028 milestone · May 15, 2028 at 9:00 AM</p>
+          <div id="project-countdown" class="timer-grid" role="timer" aria-label="Time remaining until graduation" aria-live="off">
+            <div class="time-box"><span id="project-days" class="time-value">--</span><span class="time-label">Days</span></div>
+            <div class="time-box"><span id="project-hours" class="time-value">--</span><span class="time-label">Hours</span></div>
+            <div class="time-box"><span id="project-minutes" class="time-value">--</span><span class="time-label">Minutes</span></div>
+            <div class="time-box"><span id="project-seconds" class="time-value">--</span><span class="time-label">Seconds</span></div>
+          </div>
+          <p id="project-countdown-complete" class="milestone-note" role="status" hidden>🎉 Congratulations, Class of 2028!</p>
+        </div>
       </article>
     </section>
   </main>
   <footer><p>&copy; 2026 Hannah Yawt. All rights reserved.</p></footer>
+  <script>
+    (() => {
+      const target = new Date(2028, 4, 15, 9, 0, 0).getTime();
+      const display = document.getElementById('project-countdown');
+      const completeMessage = document.getElementById('project-countdown-complete');
+      const values = {
+        days: document.getElementById('project-days'),
+        hours: document.getElementById('project-hours'),
+        minutes: document.getElementById('project-minutes'),
+        seconds: document.getElementById('project-seconds')
+      };
+      if (!display || !completeMessage || Object.values(values).some((element) => !element)) return;
+
+      let intervalId;
+      const update = () => {
+        const remaining = target - Date.now();
+        if (remaining <= 0) {
+          window.clearInterval(intervalId);
+          display.hidden = true;
+          completeMessage.hidden = false;
+          return;
+        }
+        values.days.textContent = Math.floor(remaining / 86400000).toString();
+        values.hours.textContent = String(Math.floor(remaining / 3600000) % 24).padStart(2, '0');
+        values.minutes.textContent = String(Math.floor(remaining / 60000) % 60).padStart(2, '0');
+        values.seconds.textContent = String(Math.floor(remaining / 1000) % 60).padStart(2, '0');
+      };
+
+      update();
+      if (target > Date.now()) intervalId = window.setInterval(update, 1000);
+    })();
+  </script>
 </body>
 </html>
