@@ -1,0 +1,22 @@
+/* Contact form grouping and validation feedback */
+.contact-fields {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.contact-fields legend {
+  margin-bottom: var(--space-2);
+  padding: 0;
+  color: var(--text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.form-field input,
+.form-field textarea {
+  display: block;
+}
+.field-error {
+  color: var(--danger);
+}
