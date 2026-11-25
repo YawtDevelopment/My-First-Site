@@ -23,11 +23,11 @@ The following foreground/background pairs use the hex values from `style.css`; r
 
 | Use | Foreground | Background | Contrast ratio | WCAG status |
 | --- | --- | --- | ---: | --- |
-| Body text | `#F2F7F4` | `#07120F` | 17.69:1 | Pass AAA |
-| Headings | `#F2F7F4` | `#10211B` | 15.45:1 | Pass AAA |
-| Mint accents and links | `#8FFFC0` | `#10211B` | 13.73:1 | Pass AAA |
-| Primary button label | `#07120F` | `#8FFFC0` | 15.72:1 | Pass AAA |
-| Form error messages | `#FFB4AB` | `#172B23` | 8.82:1 | Pass AAA |
+| Body text | `#F2F7F4` | `#07120F` | 17.58:1 | Pass AAA |
+| Headings | `#F2F7F4` | `#10211B` | 15.30:1 | Pass AAA |
+| Mint accents and links | `#8FFFC0` | `#10211B` | 13.62:1 | Pass AAA |
+| Primary button label | `#07120F` | `#8FFFC0` | 15.65:1 | Pass AAA |
+| Form error messages | `#FFB4AB` | `#172B23` | 8.79:1 | Pass AAA |
 
 ## Visual design and Gestalt principles
 
